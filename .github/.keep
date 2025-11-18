@@ -1,0 +1,27 @@
+current_state = "locked"
+
+while current_state != "coin paid":
+
+    if current_state == "locked":
+        print("turn thing is locked")
+    elif current_state == "unlocked":
+        print("turn thing is unlocked")
+    else:
+        print("what do you want from me idk what your asking")
+
+    current_input = input("You can add a coin (c) or you can push the turn thing (p)")
+
+    if current_state == "locked":
+        if current_input == "c":
+            current_state = "unlocked"
+        elif current_input == "p":
+            print("please insert coin")
+    
+    elif current_state == "unlocked":
+        if current_input == "c":
+            current_state = "unlocked"
+            print("coin rejected, turn thing already unlocked")
+        elif current_input == "p":
+            print("turn thing opened")
+            current_state = "locked"
+        
